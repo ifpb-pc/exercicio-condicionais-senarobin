@@ -54,7 +54,7 @@ def q4():
         print(n)
     elif n_dois > n and n_dois > n_tres:
         print(n_dois)
-    elif n_tres > n and n_tres > n_dois:
+    else:
         print(n_tres)
 
 
@@ -120,8 +120,13 @@ def q8():
     de usuário e uma senha. Se o nome de usuário for "admin" e a senha for 
     "12345", exiba "Acesso concedido", caso contrário, exiba "Acesso negado".
     """
-    pass
+    nome_user = input('Digite seu nome de usuário: ')
+    senha = int(input('Digite sua senha: '))
 
+    if nome_user == 'admin' and senha == 12345:
+        print('Acesso concedido')
+    else:
+        print('Acesso negado')
 def q9():
     """
     9. Calculadora de IMC: Peça ao usuário sua altura e peso e calcule o
@@ -129,11 +134,33 @@ def q9():
       indicando se a pessoa está: Abaixo do peso, Peso normal, Sobrepeso, 
       Obesa ou Muito obesa.
     """
-    pass
+    altura = float(input('Qual é a sua altura: '))
+    peso = float(input('Qual o seu peso: '))
+
+    imc = peso / (altura**2)
+
+    if imc < 18.5:
+        print('Abaixo do peso')
+    elif 18.5 <= imc and imc <= 24.9:
+        print('Peso normal')
+    elif 25 <= imc and imc <= 29.9:
+        print('Sobrepeso')
+    elif 30 <= imc and imc <= 34.9:
+        print('Obeso')
+    elif 35 <= imc and imc <= 40: 
+        print('Muito obeso')
+
 
 def q10():
     """
     10. Verificação de Ano Bissexto: Escreva um programa que verifica 
     se um ano fornecido pelo usuário é bissexto ou não.
     """
-    pass
+    ano = int(input('Digite um ano: '))
+
+    if ano % 4 == 0 and ano % 100 != 0:
+        print('bissexto')
+    elif ano % 4 == 0 and ano % 100 == 0 and ano % 400 == 0:
+        print('bissexto')
+    else:
+        print('não')
